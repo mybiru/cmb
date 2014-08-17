@@ -1,6 +1,6 @@
 function getRecipeHome() {
     $("#list-home").empty();
-    var e = "http://localhost/carimakananbayi.com/public/?__my=jelajahi&android_json=true";
+    var e = "http://192.168.1.102/carimakananbayi.com/public/?__my=jelajahi&android_json=true";
     getRequest(e, function(e) {
         var e = JSON.parse(e.responseText);
         for (var t = 0; t < e.length; t++) {
@@ -16,7 +16,7 @@ function getRecipeHome() {
 
 function getRecipeCategory() {
     $("#list-category").empty();
-    var e = "http://localhost/carimakananbayi.com/public/?__my=usia&android_json=true";
+    var e = "http://192.168.1.102/carimakananbayi.com/public/?__my=usia&android_json=true";
     getRequest(e, function(e) {
         var e = JSON.parse(e.responseText);
         for (var t = 0; t < e.length; t++) {
@@ -32,7 +32,7 @@ function getRecipeCategory() {
 
 function getRecipeList(e) {
     $("#list-all").empty();
-    var t = "http://localhost/carimakananbayi.com/public/?__my=usia&android_json=true&umur=" + e;
+    var t = "http://192.168.1.102/carimakananbayi.com/public/?__my=usia&android_json=true&umur=" + e;
     getRequest(t, function(e) {
         var e = JSON.parse(e.responseText);
         for (var t = 0; t < e.length; t++) {
@@ -50,7 +50,7 @@ function getRecipeBookmark() {
     $("#list-bookmark").empty();
     for (var e in tbBookmark) {
         var t = JSON.parse(tbBookmark[e]);
-        var n = "http://localhost/carimakananbayi.com/public/?__my=viewresep&android_json=true&xid=" + t.id;
+        var n = "http://192.168.1.102/carimakananbayi.com/public/?__my=viewresep&android_json=true&xid=" + t.id;
 		//$("#list-bookmark").append(t.id);
         getRequest(n, function(e) {
             var e = JSON.parse(e.responseText);
@@ -69,7 +69,7 @@ function getRecipeBookmark() {
 function getDetail(e) {
     $("#btn-bookmark").attr("rel", e);
     //var t = urlService + "service/get_detail?id=" + e;
-	var t = "http://localhost/carimakananbayi.com/public/?__my=viewresep&android_json=true&xid=" + e;
+	var t = "http://192.168.1.102/carimakananbayi.com/public/?__my=viewresep&android_json=true&xid=" + e;
     getRequest(t, function(e) {
         var e = JSON.parse(e.responseText);
         for (var t = 0; t < e.length; t++) {
